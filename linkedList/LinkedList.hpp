@@ -29,7 +29,7 @@ bool LinkedList<T>::isEmpty() const
 template <typename T>
 int LinkedList<T>::size() const
 {
-	/** TODO 
+        /**
                 ~Done
 	*/
         return(m_size);
@@ -38,6 +38,11 @@ int LinkedList<T>::size() const
 template <typename T>
 bool LinkedList<T>::search(T value) const
 {
+        //check if the list is empty, empty list will not have value
+        if (isEmpty()){
+            return (false);
+        }
+
 	Node<T>* temp = m_front;
 	bool isFound = false;
 
