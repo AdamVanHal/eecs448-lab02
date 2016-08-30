@@ -1,6 +1,6 @@
 /**
-*	@author 
-*	@date 
+*	@author Adam Van Hal
+*	@date August 30 2016
 *	@file LinkedList.hpp
 *	@brief Implementation file for templated LinkedList class
 */
