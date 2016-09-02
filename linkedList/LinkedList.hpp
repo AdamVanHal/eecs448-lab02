@@ -109,8 +109,35 @@ bool LinkedList<T>::removeBack()
 	bool isRemoved = false;
 
 	/** TODO 
-		Fix this method
+		Done
 	*/
+
+	if(isEmpty()) //you can't remove the last element of an empty list
+	{
+		isRemoved = false;	
+	}
+	else if(size() == 1) //Check if there is only one element in the list, if so, just remove it
+	{
+		lastNode = m_front;
+		m_front = nullptr; //Set the pointer to the front to null
+		delete lastNode; //delete the only node
+		m_size--;
+		isRemoved = true;
+	}
+	else //find second to last element in list, break chain, delete last element
+	{
+		lastNode = m_front;
+		while(lastNode->getNext() != nullptr) //step to the end of the list
+		{
+			secondintoLast = lastNode; //track second to last node
+			lastNode = lastNode->getNext(); //get next node
+		}
+
+		secondintoLast->setNext(nullptr);
+		delete lastNode;
+		m_size--; //correct the size of the list
+		isRemoved = true;
+	}
 
 	return(isRemoved);
 }	
