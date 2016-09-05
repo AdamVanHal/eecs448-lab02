@@ -45,9 +45,25 @@ bool LinkedList<T>::search(T value) const
 
 	Node<T>* temp = m_front;
 	bool isFound = false;
+	
+	if(temp->getValue() == value) //test if the first vlaue of the list is the correct value
+	{
+		isFound = true;
+		return(isFound);
+	}
+	while(temp->getNext() != nullptr) //Check all remaining values of the list
+	{
+		temp = temp->getNext();
+		if(temp->getValue() == value)
+		{
+			isFound = true;
+			break;
+		}
+		
+	}
 
-	/** TODO 
-		Fix this method
+	/**
+  	Done 
 	*/
 
 	return(isFound);
